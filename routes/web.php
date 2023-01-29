@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,7 @@ use App\Http\Controllers\Front\HomeController;
 
 /* Front End */
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 /* Admin */
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home')
 ->middleware('admin:admin');

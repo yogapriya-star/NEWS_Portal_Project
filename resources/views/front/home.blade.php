@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('front.layout.app')
 
 @section('main_content')
 <div class="news-ticker-item">
