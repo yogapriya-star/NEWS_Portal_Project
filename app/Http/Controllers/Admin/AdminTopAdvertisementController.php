@@ -18,7 +18,7 @@ class AdminTopAdvertisementController extends Controller
       if ($request->hasFile('top_ad')) {
 
           $request->validate([
-              'top_ad' => 'image|mimes:jpg,jpeg,png,gif',
+              'top_ad' => 'required|image|mimes:jpg,jpeg,png,gif',
           ]);
           $image_path = public_path('uploads/'.$top_ad_data->top_ad);
           if(file_exists($image_path)){
