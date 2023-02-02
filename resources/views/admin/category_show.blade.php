@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Sidebar Advertisements')
+@section('heading', 'Categories')
 
 @section('button')
-  <a href="{{route('admin_sidebar_ad_create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add</a>
+  <a href="{{route('admin_category_create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add</a>
 @endsection
 
 @section('main_content')
@@ -17,22 +17,22 @@
                             <thead>
                             <tr>
                                 <th>SL</th>
-                                <th>Photo</th>
-                                <th>URL</th>
-                                <th>Location</th>
+                                <th>Category Name</th>
+                                <th>Show on menu?</th>
+                                <th>Order</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                              @foreach($sidebar_ad_data as $row)
+                              @foreach($categories as $row)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td><img src="{{asset('uploads/'.$row->sidebar_ad)}}" alt="" style="width:200px;"/></td>
-                                <td>{{$row->sidebar_ad_url}}</td>
-                                <td>{{$row->sidebar_ad_location}}</td>
+                                <td>{{$row->category_name}}</td>
+                                <td>{{$row->show_on_menu}}</td>
+                                <td>{{$row->category_order}}</td>
                                 <td class="pt_10 pb_10">
-                                    <a href="{{route('admin_sidebar_ad_edit',$row->id)}}" class="btn btn-primary">Edit</a>
-                                    <a href="{{route('admin_sidebar_ad_delete',$row->id)}}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                    <a href="{{route('admin_category_edit',$row->id)}}" class="btn btn-primary">Edit</a>
+                                    <a href="{{route('admin_category_delete',$row->id)}}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
