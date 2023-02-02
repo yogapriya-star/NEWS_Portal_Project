@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\AdminHomeAdvertisementController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\AboutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +39,7 @@ Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->nam
 ->middleware('admin:admin');
 Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])
 ->name('admin_profile_submit');
+Route::get('/admin/home-advertisement', [AdminHomeAdvertisementController::class, 'home_ad_show'])
+->name('admin_home_ad_show');
+Route::post('/admin/home-advertisement-update', [AdminHomeAdvertisementController::class, 'home_ad_update'])
+->name('admin_home_ad_update');

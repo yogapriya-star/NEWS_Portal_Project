@@ -99,16 +99,21 @@
     </div>
 </div>
 
+@if($home_ad_data->above_search_ad_status == 'Show')
 <div class="ad-section-2">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href=""><img src="{{asset('uploads/ad-1.png')}}" alt=""></a>
+              @if($home_ad_data->above_search_ad_url == '')
+                <img src="{{asset('uploads/'.$home_ad_data->above_search_ad)}}" alt="">
+                @else
+                  <a href="{{$home_ad_data->above_search_ad_url}}"><img src="{{asset('uploads/'.$home_ad_data->above_search_ad)}}" alt="">
+                @endif
             </div>
         </div>
     </div>
 </div>
-
+@endif
 <div class="search-section">
     <div class="container">
         <div class="inner">
@@ -917,14 +922,20 @@
 
 
 
-<div class="ad-section-3">
+@if($home_ad_data->above_footer_ad_status == 'Show')
+<div class="ad-section-2">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href=""><img src="{{asset('uploads/ad-1.png')}}" alt=""></a>
+              @if($home_ad_data->above_footer_ad_url == '')
+                <img src="{{asset('uploads/'.$home_ad_data->above_footer_ad)}}" alt="">
+                @else
+                  <a href="{{$home_ad_data->above_footer_ad_url}}"><img src="{{asset('uploads/'.$home_ad_data->above_footer_ad)}}" alt="">
+                @endif
             </div>
         </div>
     </div>
 </div>
+@endif
 
 @endsection
