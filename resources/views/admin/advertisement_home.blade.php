@@ -11,7 +11,7 @@
     <div class="col-6">
       <div class="card">
         <div class="card-body">
-          <h5>Above Search</h5>
+          <h5>Above Section</h5>
 
             <div class="form-group mb-3">
               <label>Existing Photo</label>
@@ -42,7 +42,7 @@
       <div class="col-6">
         <div class="card">
           <div class="card-body">
-            <h5>Above Footer</h5>
+            <h5>Footer Section</h5>
               <div class="form-group mb-3">
                 <label>Existing Photo</label>
                 <div>

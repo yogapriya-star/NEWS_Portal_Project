@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminHomeAdvertisementController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\AboutController;
-
+use App\Http\Controllers\Admin\AdminTopAdvertisementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,3 +43,7 @@ Route::get('/admin/home-advertisement', [AdminHomeAdvertisementController::class
 ->name('admin_home_ad_show');
 Route::post('/admin/home-advertisement-update', [AdminHomeAdvertisementController::class, 'home_ad_update'])
 ->name('admin_home_ad_update');
+Route::get('/admin/top-advertisement', [AdminTopAdvertisementController::class, 'top_ad_show'])
+->name('admin_top_ad_show');
+Route::post('/admin/top-advertisement-update', [AdminTopAdvertisementController::class, 'top_ad_update'])
+->name('admin_top_ad_update');
