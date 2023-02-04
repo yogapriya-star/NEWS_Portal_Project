@@ -10,6 +10,7 @@ use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Admin\AdminTopAdvertisementController;
 use App\Http\Controllers\Admin\AdminSidebarController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminSubCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,3 +92,17 @@ Route::post('/admin/category/update/{id}', [AdminCategoryController::class, 'upd
 ->name('admin_category_update');
 Route::get('/admin/category/delete/{id}', [AdminCategoryController::class, 'delete'])
 ->name('admin_category_delete')->middleware('admin:admin');
+
+/* Sub Category */
+Route::get('/admin/subcategory/show', [AdminSubCategoryController::class, 'show'])
+->name('admin_subcategory_show')->middleware('admin:admin');
+Route::get('/admin/subcategory/create', [AdminSubCategoryController::class, 'create'])
+->name('admin_subcategory_create')->middleware('admin:admin');
+Route::post('/admin/subcategory/store', [AdminSubCategoryController::class, 'store'])
+->name('admin_subcategory_store');
+Route::get('/admin/subcategory/edit/{id}', [AdminSubCategoryController::class, 'edit'])
+->name('admin_subcategory_edit')->middleware('admin:admin');
+Route::post('/admin/subcategory/update/{id}', [AdminSubCategoryController::class, 'update'])
+->name('admin_subcategory_update');
+Route::get('/admin/subcategory/delete/{id}', [AdminSubCategoryController::class, 'delete'])
+->name('admin_subcategory_delete')->middleware('admin:admin');
