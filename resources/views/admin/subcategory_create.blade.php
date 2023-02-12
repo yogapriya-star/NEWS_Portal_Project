@@ -3,7 +3,7 @@
 @section('heading', 'Create Category')
 
 @section('button')
-  <a href="{{route('admin_category_show')}}" class="btn btn-primary"> View</a>
+  <a href="{{route('admin_subcategory_show')}}" class="btn btn-primary"> View</a>
 @endsection
 
 @section('main_content')

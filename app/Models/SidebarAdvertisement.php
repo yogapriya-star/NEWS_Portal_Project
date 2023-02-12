@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class SidebarAdvertisement extends Authenticatable
+class SidebarAdvertisement extends Model
 {
-  use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
   protected $fillable = [
     'sidebar_ad',
